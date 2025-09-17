@@ -1,124 +1,152 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Researcher Homepage | Lim Habin</title>
+  <title>Habin Lim | Research Homepage</title>
   <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      margin: 0;
-      background-color: #f9fafb;
-      color: #111827;
-      line-height: 1.6;
+    :root{
+      --bg:#f9fafb; --fg:#111827; --muted:#6b7280; --card:#ffffff;
+      --line:#e5e7eb; --primary:#2563eb; --accent:#1f2937;
     }
-    header {
-      text-align: center;
-      padding: 40px 20px 20px;
-      background: #1f2937;
-      color: #fff;
-    }
-    header img {
-      width: 160px;
-      height: 160px;
-      border-radius: 50%;
-      border: 4px solid #fff;
-      margin-bottom: 16px;
-      object-fit: cover;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 28px;
-    }
-    header p {
-      margin: 6px 0;
-      font-size: 16px;
-      opacity: 0.9;
-    }
-    main {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 30px 20px 60px;
-    }
-    section {
-      margin-bottom: 40px;
-    }
-    h2 {
-      border-bottom: 2px solid #e5e7eb;
-      padding-bottom: 6px;
-      margin-bottom: 16px;
-      font-size: 22px;
-      color: #374151;
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-    ul li {
-      margin-bottom: 8px;
-    }
-    a {
-      color: #2563eb;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 14px;
-      color: #6b7280;
-      border-top: 1px solid #e5e7eb;
-    }
+    *{box-sizing:border-box}
+    body{margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif; background:var(--bg); color:var(--fg); line-height:1.6}
+    a{color:var(--primary); text-decoration:none}
+    a:hover{text-decoration:underline}
+    header{background:var(--accent); color:#fff; padding:40px 20px 28px; text-align:center}
+    header .avatar{width:140px; height:140px; border-radius:50%; border:4px solid #fff; object-fit:cover; margin-bottom:16px}
+    nav{margin-top:10px; display:flex; gap:14px; justify-content:center; flex-wrap:wrap}
+    nav a{color:#c7d2fe}
+    .wrap{max-width:900px; margin:0 auto; padding:30px 20px 64px}
+    section{background:var(--card); border:1px solid var(--line); border-radius:16px; padding:22px; margin-bottom:18px}
+    h1{margin:0 0 6px; font-size:28px}
+    h2{margin:0 0 14px; font-size:22px; color:#374151; border-bottom:2px solid var(--line); padding-bottom:6px}
+    .subtitle{margin:6px 0 14px; opacity:.95}
+    .grid{display:grid; gap:14px}
+    @media (min-width:720px){ .grid.two{grid-template-columns:1fr 1fr} }
+    ul{margin:0; padding-left:18px}
+    li{margin-bottom:6px}
+    .item{display:flex; gap:12px}
+    .item .date{min-width:150px; color:var(--muted)}
+    .pill{display:inline-block; border:1px solid var(--line); border-radius:999px; padding:6px 10px; margin:4px 6px 0 0; font-size:14px; background:#fff}
+    footer{text-align:center; padding:22px; color:var(--muted)}
+    .btn{display:inline-block; padding:10px 14px; border:1px solid #fff; border-radius:10px; color:#fff}
+    .links{display:flex; gap:10px; justify-content:center; margin-top:10px; flex-wrap:wrap}
   </style>
 </head>
 <body>
   <header>
-    <!-- 추후 프로필 사진이 있으면 src에 URL 추가 -->
-    <img src="https://avatars.githubusercontent.com/habin-2035" alt="Profile Picture">
-    <h1>임하빈 (Lim Habin)</h1>
-    <p>석사과정 연구자 · 고려대학교</p>
+    <!-- Use your GitHub avatar for now; replace src with your own photo URL later -->
+    <img class="avatar" src="https://avatars.githubusercontent.com/habin-2035" alt="Profile photo">
+    <h1>Habin Lim</h1>
+    <div class="subtitle">M.S. Student, Korea University · Advisor: Jae-Yong Park</div>
+    <div class="links">
+      <a class="btn" href="mailto:habin2035@naver.com">Email</a>
+      <a class="btn" href="https://github.com/habin-2035" target="_blank" rel="noopener">GitHub</a>
+    </div>
+    <nav>
+      <a href="#research-interests">Research Interests</a>
+      <a href="#education">Education</a>
+      <a href="#conferences">Conferences</a>
+      <a href="#experience">Research Experiences</a>
+      <a href="#awards">Awards & Honors</a>
+      <a href="#skills">Skills & Techniques</a>
+    </nav>
   </header>
 
-  <main>
-    <section>
-      <h2>연구 분야</h2>
+  <main class="wrap">
+    <section id="about">
+      <h2>About</h2>
       <p>
-        제 연구는 <strong>Astrocyte, TREK1, TWIK1, YIPF3</strong>에 초점을 두고 있습니다.  
-        신경세포와 아교세포의 상호작용, 막단백질의 역할 및 치료적 가능성을 탐구하고 있습니다.
+        I am a master’s student in the Department of Integrated Biomedical and Life Science at Korea University.
+        My research focuses on astrocyte physiology and potassium channel biology (TREK1/TWIK1), including protein–protein interactions with YIPF3 and mechanisms underlying passive conductance and electrophysiological phenotypes.
       </p>
     </section>
 
-    <section>
-      <h2>연구 관심사</h2>
+    <section id="research-interests">
+      <h2>Research Interests</h2>
+      <div>
+        <span class="pill">Astrocyte</span>
+        <span class="pill">Ion channel</span>
+        <span class="pill">Potassium ion channel</span>
+        <span class="pill">Passive conductance</span>
+        <span class="pill">Electrophysiology</span>
+      </div>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+
+      <div class="item">
+        <div class="date">Mar. 2024 – Present</div>
+        <div>
+          <strong>Korea University</strong>, Department of Integrated Biomedical and Life Science (Seoul, Korea)<br>
+          Advisor: <em>Jae-Yong Park</em><br>
+          Master Student · GPA: <strong>4.24 / 4.5</strong>
+        </div>
+      </div>
+
+      <div class="item" style="margin-top:10px;">
+        <div class="date">Feb. 2020 – Feb. 2024</div>
+        <div>
+          <strong>Korea University</strong>, School of Biosystem and Biomedical Science (Seoul, Korea)<br>
+          B.S. in Biosystem and Biomedical Science · GPA: <strong>4.16 / 4.5</strong>
+        </div>
+      </div>
+    </section>
+
+    <section id="conferences">
+      <h2>Conferences</h2>
       <ul>
-        <li>🌌 Astrocyte 기능과 뇌 회로 조절</li>
-        <li>⚡ TREK1 & TWIK1 채널 연구</li>
-        <li>🧬 YIPF3의 단백질 상호작용</li>
-        <li>💊 신경정신질환 관련 치료 전략</li>
+        <li>
+          Habin Lim, Jae-Yong Park, “Identification of Novel Binding Proteins of TREK1 channel,”
+          <em>FAOBMB 2025</em>, Busan, Korea (Aug. 2025) — Poster
+        </li>
       </ul>
     </section>
 
-    <section>
-      <h2>발표 및 성과</h2>
+    <section id="experience">
+      <h2>Research Experiences</h2>
       <ul>
-        <li><a href="#">Poster: Identification of novel TREK1 binding proteins</a></li>
+        <li>
+          Research Intern, Department of Biomedical Sciences, Seoul National University, Korea
+          (Jul. 2022 – Aug. 2022)
+        </li>
       </ul>
-      <p>* 실제 학회 발표 자료나 논문 링크가 있으면 여기에 추가할 수 있습니다.</p>
     </section>
 
-    <section>
-      <h2>연락처</h2>
+    <section id="awards">
+      <h2>Awards & Honors</h2>
       <ul>
-        <li>📧 이메일: <a href="mailto:habin2035@naver.com">habin2035@naver.com</a></li>
-        <li>🔗 GitHub: <a href="https://github.com/habin-2035" target="_blank">github.com/habin-2035</a></li>
+        <li>Outstanding New Graduate Student Scholarship, Korea University, Korea (Mar. 2024)</li>
       </ul>
+    </section>
+
+    <section id="skills">
+      <h2>Skills & Techniques</h2>
+      <div class="grid two">
+        <ul>
+          <li>Cell Culture</li>
+          <li>Western Blot</li>
+          <li>Immunocytochemistry</li>
+          <li>PCR</li>
+          <li>Gateway Cloning</li>
+          <li>Co-Immunoprecipitation</li>
+        </ul>
+        <ul>
+          <li>Surface Biotinylation Assay</li>
+          <li>Primary Astrocyte Culture</li>
+          <li>Electroporation</li>
+          <li>Whole-Cell Patch Clamp</li>
+          <li>Cardiac Perfusion</li>
+          <li>Confocal Microscope Imaging</li>
+        </ul>
+      </div>
     </section>
   </main>
 
   <footer>
-    © 2025 Lim Habin. All rights reserved.
+    © 2025 Habin Lim. All rights reserved.
   </footer>
 </body>
 </html>
